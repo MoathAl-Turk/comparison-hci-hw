@@ -5,30 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI Assignment 1 - AI Websites</title>
     <style>
-        /* Smooth, modern background */
+        /* Animated Purple Background (Gemini/Discord style) */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             margin: 0; 
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            /* Creates a smooth, oversized gradient */
+            background: linear-gradient(-45deg, #1e0533, #4b0082, #7a28cb, #32004f);
+            background-size: 400% 400%;
+            /* Triggers the movement animation */
+            animation: gradientAnimation 12s ease infinite;
+            overflow: hidden;
+        }
+
+        /* Keyframes to move the background smoothly */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
-        /* Card container for a polished look */
+        /* Glassmorphism Card Effect */
         .container {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            backdrop-filter: blur(12px); /* Blurs the moving background behind it */
+            -webkit-backdrop-filter: blur(12px);
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
             text-align: center;
             max-width: 400px;
             width: 100%;
+            color: white; 
         }
 
-        h1 { color: #2c3e50; margin-top: 0; font-size: 24px; }
-        p { color: #555; margin-bottom: 25px; line-height: 1.5; }
+        h1 { margin-top: 0; font-size: 26px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        p { margin-bottom: 25px; line-height: 1.5; color: #e8dcf5; }
 
         .links { 
             display: flex; 
@@ -36,30 +52,29 @@
             gap: 15px; 
         }
 
-        /* Interactive, animated buttons */
+        /* Glassy Interactive Buttons */
         a { 
             text-decoration: none; 
             padding: 15px 20px; 
-            background-color: #3498db; 
+            background: rgba(255, 255, 255, 0.15); 
             color: white; 
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px; 
             font-weight: bold;
             font-size: 16px;
-            transition: all 0.3s ease; /* Smooth animation */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease; 
         }
 
-        /* Hover effects */
         a:hover { 
-            background-color: #2980b9; 
-            transform: translateY(-3px); /* Lifts the button up */
-            box-shadow: 0 7px 14px rgba(0,0,0,0.15); /* Increases shadow */
+            background: rgba(255, 255, 255, 0.25); 
+            transform: translateY(-3px); 
+            box-shadow: 0 7px 15px rgba(0,0,0,0.5); 
+            border-color: #d8b4fe; /* Highlights border on hover */
         }
         
-        /* Click effects */
         a:active {
-            transform: translateY(1px); /* Pushes button down */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transform: translateY(1px); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
     </style>
 </head>
@@ -69,7 +84,6 @@
         <p>Select a tool below to view its generated webpage in a new tab:</p>
         
         <div class="links">
-            <!-- target="_blank" forces the link to open in a new tab -->
             <a href="google.html" target="_blank" rel="noopener noreferrer">Google AI Studio</a>
             <a href="chatgbt.html" target="_blank" rel="noopener noreferrer">ChatGPT</a>
             <a href="claude.html" target="_blank" rel="noopener noreferrer">Claude</a>
