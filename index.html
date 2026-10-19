@@ -5,21 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI Assignment 1 - AI Websites</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        .links { display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 30px;}
-        a { text-decoration: none; padding: 15px 30px; background-color: #333; color: white; border-radius: 5px; width: 200px;}
-        a:hover { background-color: #555; }
+        /* Smooth, modern background */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0; 
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Card container for a polished look */
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 { color: #2c3e50; margin-top: 0; font-size: 24px; }
+        p { color: #555; margin-bottom: 25px; line-height: 1.5; }
+
+        .links { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+        }
+
+        /* Interactive, animated buttons */
+        a { 
+            text-decoration: none; 
+            padding: 15px 20px; 
+            background-color: #3498db; 
+            color: white; 
+            border-radius: 8px; 
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease; /* Smooth animation */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Hover effects */
+        a:hover { 
+            background-color: #2980b9; 
+            transform: translateY(-3px); /* Lifts the button up */
+            box-shadow: 0 7px 14px rgba(0,0,0,0.15); /* Increases shadow */
+        }
+        
+        /* Click effects */
+        a:active {
+            transform: translateY(1px); /* Pushes button down */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
-    <h1>AI-Generated Web Interfaces</h1>
-    <p>Select a tool below to view its generated webpage:</p>
-    
-    <div class="links">
-        <!-- These links now point directly to your uploaded files -->
-        <a href="google.html">Google AI Studio</a>
-        <a href="chatgbt.html">ChatGPT</a>
-        <a href="claude.html">Claude</a>
+    <div class="container">
+        <h1>AI-Generated Web Interfaces</h1>
+        <p>Select a tool below to view its generated webpage in a new tab:</p>
+        
+        <div class="links">
+            <!-- target="_blank" forces the link to open in a new tab -->
+            <a href="google.html" target="_blank" rel="noopener noreferrer">Google AI Studio</a>
+            <a href="chatgbt.html" target="_blank" rel="noopener noreferrer">ChatGPT</a>
+            <a href="claude.html" target="_blank" rel="noopener noreferrer">Claude</a>
+        </div>
     </div>
 </body>
 </html>
