@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- This meta tag is crucial for mobile responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI Assignment 1 - AI Websites</title>
     <style>
+        /* Ensures padding doesn't push the container off-screen */
+        * {
+            box-sizing: border-box;
+        }
+
         /* Animated Coffee Brown Background */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -13,7 +19,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Gradient using deep espresso, warm mocha, and caramel tones */
             background: linear-gradient(-45deg, #2b1408, #5c3a21, #8b5a2b, #3d1c00);
             background-size: 400% 400%;
             animation: gradientAnimation 12s ease infinite;
@@ -37,7 +42,7 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.6);
             text-align: center;
             max-width: 400px;
-            width: 100%;
+            width: 90%; /* Leaves a nice margin on mobile screens */
             color: white; 
         }
 
@@ -61,18 +66,37 @@
             font-weight: bold;
             font-size: 16px;
             transition: all 0.3s ease; 
+            width: 100%; /* Makes buttons fill the available space nicely */
         }
 
         a:hover { 
             background: rgba(255, 255, 255, 0.25); 
             transform: translateY(-3px); 
             box-shadow: 0 7px 15px rgba(0,0,0,0.5); 
-            border-color: #d2a679; /* Warm latte/caramel color on hover */
+            border-color: #d2a679; 
         }
         
         a:active {
             transform: translateY(1px); 
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px; /* Reduces padding to save space */
+                width: 92%;
+            }
+            h1 {
+                font-size: 22px; /* Scales down header */
+            }
+            p {
+                font-size: 14px;
+            }
+            a {
+                padding: 12px 15px;
+                font-size: 15px;
+            }
         }
     </style>
 </head>
